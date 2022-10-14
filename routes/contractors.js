@@ -3,7 +3,7 @@ const router = express.Router()
 const Contractor = require('../models/Contractor')
 
 //get all contractors that match the customer's criteria:
-router.get('/matchedCriteria',async(req,res)=>{
+router.post('/matchedCriteria',async(req,res)=>{
     //check the customer's from and to locations:
     if(req.body.homeCity && req.body.destCity){
         try{

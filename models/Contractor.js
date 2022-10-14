@@ -18,6 +18,12 @@ const ContractorSchema = mongoose.Schema({
         min:3,
         max:50,
         required:true
+    },
+    avgRatings:{
+        types: Number,
+        min:0,
+        max:5,
+        default:0
     }
 })
 module.exports = mongoose.model('Contractor',ContractorSchema)
