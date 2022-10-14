@@ -9,6 +9,7 @@ dotenv.config({path:"./.env"})
 const checkAuthenticated = require('./middlewares/checkAuthenticated')
 const authRouter = require('./routes/auth')
 const userRouter = require('./routes/users')
+const contractorRouter = require('./routes/contractors')
 const app = express()
 
 //Middlewares:
@@ -21,6 +22,7 @@ app.use(cors())
 //Routers:
 app.use('/',authRouter)
 app.use('/users',userRouter)
+app.use('/contractors',contractorRouter)
 app.get('/',checkAuthenticated, (req,res) => {
     res.send('Hello Shifting')
 })

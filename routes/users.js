@@ -6,17 +6,18 @@ router.put('/updateCity',async(req,res)=>{
     if(req.body.homeCity && req.body.destCity){
         try{
             const user = await User.findOne({google_id:"testgid"})
+            //TODO: Remove debug
             console.log(user)
             //warning: no condition checks implemented
             await user.updateOne({$set:{"homeCity":req.body.homeCity,"destCity":req.body.destCity}})
             return res.status(200).json({"user":user})
         }catch(error){
             console.log(error)
-            res.status(500).json({error:"Internal Server Error"})
+            return res.status(500).json({error:"Internal Server Error"})
         }
         
     }else
-        res.status(400).json({error:"Bad request"})
+        return res.status(400).json({error:"Bad request"})
 })
 
 module.exports =  router
