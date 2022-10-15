@@ -21,8 +21,6 @@ const ContractorSchema = mongoose.Schema({
     },
     avgRatings:{
         types: Number,
-        min:0,
-        max:5,
         default:0
     }
 })

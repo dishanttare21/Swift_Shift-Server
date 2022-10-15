@@ -23,7 +23,7 @@ app.use(cors())
 app.use('/',authRouter)
 app.use('/users',userRouter)
 app.use('/contractors',contractorRouter)
-app.get('/',checkAuthenticated, (req,res) => {
+app.post('/',checkAuthenticated, (req,res) => {
     res.send('Hello Shifting')
 })
 

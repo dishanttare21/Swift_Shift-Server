@@ -14,7 +14,7 @@ router.post('/matchedCriteria',async(req,res)=>{
             //TODO: Remove debug
             console.log(contractors)
             if(contractors.length >0){
-                return res.status(200).json({"contractors":contractors})
+                return res.status(200).json({contractors:contractors})
             }
             //if no contractor found
             return res.status(404).json({"error":"There are currently no contractors that work in your city(s)"})
